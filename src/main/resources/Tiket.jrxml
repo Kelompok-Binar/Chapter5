@@ -39,14 +39,14 @@
                     <textElement verticalAlignment="Bottom">
                         <font isBold="false"/>
                     </textElement>
-                    <text><![CDATA[Cherry Title]]></text>
+                    <text><![CDATA[IndoXXxI]]></text>
                 </staticText>
                 <staticText>
                     <reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="cfa21334-0634-4605-9ea7-aca4981f67e4"/>
                     <textElement textAlignment="Right">
                         <font size="22" isBold="false"/>
                     </textElement>
-                    <text><![CDATA[Cherry SubTitle]]></text>
+                    <text><![CDATA[Tiket Nonton]]></text>
                 </staticText>
             </frame>
             <frame>
@@ -73,7 +73,7 @@
                 <textElement>
                     <font isBold="false"/>
                 </textElement>
-                <text><![CDATA[film_name]]></text>
+                <text><![CDATA[Film Name]]></text>
             </staticText>
             <staticText>
                 <reportElement style="Column header" x="132" y="0" width="132" height="18" forecolor="#000000" uuid="f08134ce-5e82-4729-be99-0c73c4eca8d1">
@@ -82,7 +82,7 @@
                 <textElement>
                     <font isBold="false"/>
                 </textElement>
-                <text><![CDATA[tayang_atau_tidak]]></text>
+                <text><![CDATA[Tayang Atau Tidak]]></text>
             </staticText>
             <staticText>
                 <reportElement style="Column header" x="264" y="0" width="132" height="18" forecolor="#000000" uuid="691ad341-e0c5-490a-8ae5-c34289002c73">
@@ -91,7 +91,7 @@
                 <textElement>
                     <font isBold="false"/>
                 </textElement>
-                <text><![CDATA[tanggal_tayang]]></text>
+                <text><![CDATA[Tanggal Tayang]]></text>
             </staticText>
             <staticText>
                 <reportElement style="Column header" x="396" y="0" width="132" height="18" forecolor="#000000" uuid="f79800b1-2fb8-4d89-b5ab-05e376942915">
@@ -100,7 +100,7 @@
                 <textElement>
                     <font isBold="false"/>
                 </textElement>
-                <text><![CDATA[jam_mulai]]></text>
+                <text><![CDATA[Jam Mulai]]></text>
             </staticText>
             <staticText>
                 <reportElement style="Column header" x="528" y="0" width="132" height="18" forecolor="#000000" uuid="3b620e70-301c-4af8-b119-729f678edf66">
@@ -109,7 +109,7 @@
                 <textElement>
                     <font isBold="false"/>
                 </textElement>
-                <text><![CDATA[jam_selesai]]></text>
+                <text><![CDATA[Jam Selesai]]></text>
             </staticText>
             <staticText>
                 <reportElement style="Column header" x="660" y="0" width="132" height="18" forecolor="#000000" uuid="463df130-f385-4f09-889c-c9fc10bf76ae">
@@ -118,7 +118,7 @@
                 <textElement>
                     <font isBold="false"/>
                 </textElement>
-                <text><![CDATA[harga_tiket]]></text>
+                <text><![CDATA[Harga Tiket]]></text>
             </staticText>
         </band>
     </columnHeader>
