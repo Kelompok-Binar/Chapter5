@@ -112,8 +112,11 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+<<<<<<< HEAD:Challenge_Chapter_5/pom.xml
 
 <!--        Jasper minimal versi 6.17.0-->
+=======
+>>>>>>> dd8a332a70bd314becb2fc995ca38d505f1710d9:pom.xml
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
