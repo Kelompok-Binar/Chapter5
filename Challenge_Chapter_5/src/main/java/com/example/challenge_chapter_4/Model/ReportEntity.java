@@ -25,9 +25,15 @@ public class ReportEntity {
     private Time jam_mulai;
     private Time jam_selesai;
     private int harga_tiket;
-
+    private int nomor_kursi;
+    private char studio_name;
     @OneToMany(mappedBy = "film_code", cascade = CascadeType.ALL)
     private List<FilmEntity> jadwal;
     @OneToMany(mappedBy = "id_jadwal", cascade = CascadeType.ALL)
     private List<JadwalEntity> jadwal2;
+    @OneToMany(mappedBy = "nomor_kursi", cascade = CascadeType.ALL)
+    private List<SeatsEntity> jadwal3;
+    @OneToMany(mappedBy = "studio_name", cascade = CascadeType.ALL)
+    private List<StudioEntity> jadwal4;
+
 }

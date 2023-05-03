@@ -25,14 +25,14 @@ public class ReportService {
     public String printReport(String format) throws FileNotFoundException, JRException {
         List<ReportEntity> reportEntities = repotInterface.findAll();
         String path = "C:\\JasperReportCh5";
-        File file = ResourceUtils.getFile("classpath:Tiket.jrxml");
+        File file = ResourceUtils.getFile("classpath:data_admin.jrxml");
         JasperReport jasperReport= JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(reportEntities);
         Map<String,Object> parameters = new HashMap<>();
         parameters.put("createBy", "Kelompok 1 Challenge 5");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         if (format.equalsIgnoreCase("pdf")) {
-            JasperExportManager.exportReportToPdfFile(jasperPrint, path+"\\Tiket_Nonton.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, path+"\\data_admin.pdf");
         }
         return "Report generated in " + path;
     }
