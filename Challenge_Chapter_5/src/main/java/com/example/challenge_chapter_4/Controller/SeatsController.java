@@ -18,7 +18,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping(value ="/Seats")
-@Api(value = "Seats")
+@Api(value = "Seats") //untuk swagger
 public class SeatsController {
     @Autowired
     SeatsService ss;

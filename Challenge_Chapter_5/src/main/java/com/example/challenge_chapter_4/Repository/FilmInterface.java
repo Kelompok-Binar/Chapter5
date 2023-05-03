@@ -23,9 +23,12 @@ public interface FilmInterface extends JpaRepository<FilmEntity, String> {
 
 //    @Query("SELECT j,f FROM JadwalEntity j JOIN FilmEntity f ON f.film_code = j.film_code WHERE LOWER(f.film_name) LIKE LOWER(concat('%',:film_name,'%') )")
 
+//    @Query("SELECT DISTINCT f FROM  FilmEntity f RIGHT JOIN JadwalEntity j on f.film_code = j.film_code")
+//    @Query("")
+//    List<FilmEntity> getJadwal();
     @Query("SELECT DISTINCT f FROM FilmEntity f RIGHT JOIN JadwalEntity j ON f.film_code = j.film_code WHERE LOWER(f.film_name) LIKE LOWER(concat('%',:film_name,'%') )")
 
-    //@Query("SELECT DISTINCT f,j FROM FilmEntity f JOIN JadwalEntity j ON f.film_code = j.film_code WHERE LOWER(f.film_name) LIKE LOWER(concat('%',:film_name,'%') ) GROUP BY f,j")
+    //@Query("SELECT DISTINCT f,j FROM FilmEntity f JOIN JadwalEntity j ON f.filmSELECT DISTINCT f FROM FilmEntity f INNER JOIN JadwalEntity j ON f.film_code = j.film_code_code = j.film_code WHERE LOWER(f.film_name) LIKE LOWER(concat('%',:film_name,'%') ) GROUP BY f,j")
     List<FilmEntity> getByFilmJadwal(@Param("film_name") String film_name);
 
 

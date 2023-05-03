@@ -2,6 +2,8 @@ package com.example.challenge_chapter_4.Swagger;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.License;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,6 +31,7 @@ public class SwaggerConfig {
                 .license(new License().name("Apache 2.0").url("http://springdoc.org")));
 //        return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any())
 //                .paths(PathSelectors.any()).build().apiInfo(apinfo());
+//        JasperPrint jasperPrint = JasperFillManager.fillReport("asd");
     }
 
     //untuk judul dokumentasi
