@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reservasi_Tiket" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a5c9b49-9dc5-422a-ac69-e92cf61ef530">
+    <property name="com.jaspersoft.studio.data.sql.tables">
+        <![CDATA[amFkd2FsIEFTICwyMjYsODksNWE2ZmU2NzUtZjBlZC00MGNlLThhNzAtM2ZjNGMwNTU3MGNlO2Zp
+bG0gQVMgLDI3LDg1LDM2ZTg3MmI1LWExZDEtNDFjOC04NTIwLTdlZTkyYmMxZjRmZjs=]]>
+    </property>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="reservasi_tiket_bioskop_online"/>
+    <style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+    <style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+    <style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+    <style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+    <style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style mode="Opaque" backcolor="#F0EFEF"/>
+        </conditionalStyle>
+    </style>
+    <queryString language="SQL">
+        <![CDATA[SELECT film.film_code,
+	film.film_name,
+	film.tayang_atau_tidak,
+	jadwal.id_jadwal,
+	jadwal.tanggal_tayang,
+	jadwal.jam_mulai,
+	jadwal.jam_selesai,
+	jadwal.harga_tiket,
+	jadwal.film_code
+FROM jadwal
+	INNER JOIN film ON
+	 jadwal.film_code = film.film_code]]>
+    </queryString>
+    <field name="film_name" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="film_name"/>
+        <property name="com.jaspersoft.studio.field.label" value="film_name"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+    </field>
+    <field name="tayang_atau_tidak" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="tayang_atau_tidak"/>
+        <property name="com.jaspersoft.studio.field.label" value="tayang_atau_tidak"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="film"/>
+    </field>
+    <field name="tanggal_tayang" class="java.sql.Date">
+        <property name="com.jaspersoft.studio.field.name" value="tanggal_tayang"/>
+        <property name="com.jaspersoft.studio.field.label" value="tanggal_tayang"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="jadwal"/>
+    </field>
+    <field name="jam_mulai" class="java.sql.Time">
+        <property name="com.jaspersoft.studio.field.name" value="jam_mulai"/>
+        <property name="com.jaspersoft.studio.field.label" value="jam_mulai"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="jadwal"/>
+    </field>
+    <field name="jam_selesai" class="java.sql.Time">
+        <property name="com.jaspersoft.studio.field.name" value="jam_selesai"/>
+        <property name="com.jaspersoft.studio.field.label" value="jam_selesai"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="jadwal"/>
+    </field>
+    <field name="harga_tiket" class="java.lang.Integer">
+        <property name="com.jaspersoft.studio.field.name" value="harga_tiket"/>
+        <property name="com.jaspersoft.studio.field.label" value="harga_tiket"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="jadwal"/>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="102" splitType="Stretch">
+            <image>
+                <reportElement x="725" y="0" width="77" height="102" uuid="651ccc4b-e999-40fe-bcbf-1f25bcfc98af"/>
+                <imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+            </image>
+            <frame>
+                <reportElement mode="Opaque" x="0" y="0" width="721" height="66" backcolor="#000000" uuid="d8d9e644-3a32-491d-97cb-a277aff17133"/>
+                <staticText>
+                    <reportElement style="Title" x="0" y="0" width="370" height="66" uuid="27d8f6ee-f0a9-44f6-a160-1763c3b00f30"/>
+                    <box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+                    <textElement verticalAlignment="Bottom">
+                        <font isBold="false"/>
+                    </textElement>
+                    <text><![CDATA[Cherry Title]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="cfa21334-0634-4605-9ea7-aca4981f67e4"/>
+                    <textElement textAlignment="Right">
+                        <font size="22" isBold="false"/>
+                    </textElement>
+                    <text><![CDATA[Cherry SubTitle]]></text>
+                </staticText>
+            </frame>
+            <frame>
+                <reportElement mode="Opaque" x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000" uuid="b0c895f6-6dbd-477d-9858-9ad66af087e1"/>
+                <textField pattern="EEEEE dd MMMMM yyyy">
+                    <reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="a33fce3b-20c1-4696-873a-fe134d1e7d88"/>
+                    <textElement textAlignment="Right">
+                        <font size="12"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="18" splitType="Stretch">
+            <staticText>
+                <reportElement style="Column header" x="0" y="0" width="132" height="18" forecolor="#000000" uuid="ac4d2541-618c-4982-af30-65e6af3ca06d">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd0f2b79-4c33-442d-9eec-843fed5f10a1"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[film_name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="132" y="0" width="132" height="18" forecolor="#000000" uuid="3509ce10-1fcb-4d18-8e02-f30ed8b5267d">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5246b2d5-3ffe-4838-af9f-43d07c3050eb"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[tayang_atau_tidak]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="264" y="0" width="132" height="18" forecolor="#000000" uuid="6d5a95e8-3ed2-4abb-b0a8-a40241da37f0">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99e3f518-359c-4cf4-be81-ff4a1dca8953"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[tanggal_tayang]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="396" y="0" width="132" height="18" forecolor="#000000" uuid="606ab4bd-c1b2-4f74-a4f9-7f955fc5cbca">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5a478204-ab6a-4cc1-8713-b223dcfa5890"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[jam_mulai]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="528" y="0" width="132" height="18" forecolor="#000000" uuid="13524578-5f40-4493-8240-03dd96330adc">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3623f677-e62b-44cb-9798-04d90b31b8ee"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[jam_selesai]]></text>
+            </staticText>
+            <staticText>
+                <reportElement style="Column header" x="660" y="0" width="132" height="18" forecolor="#000000" uuid="35c0d771-0684-474a-a44a-83114b71b843">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="effd168f-cdda-49ef-b43f-3dd8b1e1f624"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[harga_tiket]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="18" splitType="Stretch">
+            <frame>
+                <reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="34a2ae4b-4055-476b-8676-d499f6af510b"/>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="0" y="0" width="132" height="18" uuid="bcf3316e-2b54-451e-a841-a21eae5c78a3">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd0f2b79-4c33-442d-9eec-843fed5f10a1"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{film_name}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="132" y="0" width="132" height="18" uuid="22a19d1a-b35f-4a37-9222-5b94aa5fbe0d">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5246b2d5-3ffe-4838-af9f-43d07c3050eb"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{tayang_atau_tidak}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="264" y="0" width="132" height="18" uuid="09258c25-6aeb-41d3-8f6f-99b985debf1c">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="99e3f518-359c-4cf4-be81-ff4a1dca8953"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{tanggal_tayang}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="396" y="0" width="132" height="18" uuid="42911916-0a5f-45ad-9feb-42e15910e610">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5a478204-ab6a-4cc1-8713-b223dcfa5890"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{jam_mulai}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="528" y="0" width="132" height="18" uuid="c7f677e1-0f5f-425b-9f0f-58267c007714">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3623f677-e62b-44cb-9798-04d90b31b8ee"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{jam_selesai}]]></textFieldExpression>
+                </textField>
+                <textField textAdjust="StretchHeight">
+                    <reportElement style="Detail" positionType="Float" x="660" y="0" width="132" height="18" uuid="a4914986-cca8-46f9-9af3-2980ededde24">
+                        <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="effd168f-cdda-49ef-b43f-3dd8b1e1f624"/>
+                    </reportElement>
+                    <textElement>
+                        <font size="14"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$F{harga_tiket}]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="7" splitType="Stretch">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="501ac6c4-e9d4-43cb-ba6b-7f2f44394cf3"/>
+                <graphicElement>
+                    <pen lineWidth="0.5" lineColor="#999999"/>
+                </graphicElement>
+            </line>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="25" splitType="Stretch">
+            <frame>
+                <reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="ffb10ec8-0371-4545-8eaa-96d62ad3cec0"/>
+                <textField evaluationTime="Report">
+                    <reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="b5521ea6-5f36-4864-856f-58d0bcd011f2"/>
+                    <textElement verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="e625ea3c-1741-4cfe-81cf-fbbdd00162c8"/>
+                    <textElement textAlignment="Right" verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+                </textField>
+                <textField pattern="EEEEE dd MMMMM yyyy">
+                    <reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="0c9f7e91-d3f5-47f9-82b7-0b2b3a43a5d6"/>
+                    <textElement verticalAlignment="Middle">
+                        <font size="10" isBold="false"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>
